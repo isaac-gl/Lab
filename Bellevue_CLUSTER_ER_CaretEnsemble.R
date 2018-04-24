@@ -26,15 +26,16 @@ load("/ifs/home/schulk02/Amsterdam/Bellevue_new/Bellevue.featureSelection.ER_MIN
 
 
 # Stacking Algorithms - Run multiple algos in one call.
-trainControl.multi_y.train <- trainControl(method="repeatedcv", 
-                                         number=10, 
-                                         repeats=5,
-                                         sampling = "up",
-                                         savePredictions= "all",
-                                         selectionFunction = "best",
-                                         summaryFunction = multiClassSummary,
-                                         classProbs = TRUE,
-                                         index = createFolds(multi_y.train, 10))
+trainControl.multi_y.train <- trainControl(method="repeatedcv",
+                                        number=10,
+                                        repeats=5,
+                                        sampling = "up",
+                                        savePredictions= "all",
+                                        selectionFunction = "best",
+                                        summaryFunction = multiClassSummary,
+                                        classProbs = TRUE,
+                                        verboseIter = FALSE,
+                                        index = createFolds(multi_y.train, 10))
 
 # basic without much model tuning
 # algorithmList <- c('rf', 'gbm', 'AdaBoost.M1', 'xgbTree', 'svmPoly', 'svmLinear', 'glmnet', 'nnet')
