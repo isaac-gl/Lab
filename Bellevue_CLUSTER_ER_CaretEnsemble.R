@@ -41,7 +41,7 @@ trainControl.multi_y.train <- trainControl(method="repeatedcv",
 # algorithmList <- c('rf', 'gbm', 'AdaBoost.M1', 'xgbTree', 'svmPoly', 'svmLinear', 'glmnet', 'nnet')
 
 # advanced with custom tune grid
-TuneList <- list(rf1=caretModelSpec(method="rf", tuneGrid=data.frame(.mtry=seq(4,48,2))),
+TuneList <- list(rf1=caretModelSpec(method="rf", tuneGrid=data.frame(mtry=seq(4,48,2))),
                  gbm=caretModelSpec(method="gbm", tuneGrid=data.frame(interaction.depth = c(3, 5, 7, 9),# Max Tree Depth
                                                                       n.trees = seq(500, 10000, 500),     # Boosting Iterations
                                                                       shrinkage = c(.001),              # Shrinkage
