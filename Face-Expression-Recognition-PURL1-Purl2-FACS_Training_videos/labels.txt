@@ -1,0 +1,6 @@
+happy
+disgust
+surprise
+sad
+anger
+fear
